@@ -1,4 +1,4 @@
-# This needs to be run on
+# This needs to be run on the pull clients
 [DSCLocalConfigurationManager()]
 configuration PullClientConfig {
   Node localhost {
@@ -9,7 +9,7 @@ configuration PullClientConfig {
       RebootNodeIfNeeded = $true
     }
     ConfigurationRepositoryWeb LON-DC1 {
-      ServerURL = 'http://LON-DC1:8080/PSDSCPullServer.svc
+      ServerURL = 'http://LON-DC1:8080/PSDSCPullServer.svc'
     }      
   }
 }
