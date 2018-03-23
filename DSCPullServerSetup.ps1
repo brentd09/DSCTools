@@ -19,7 +19,7 @@ Catch {
         WindowsFeature DSCServiceFeature {
           Ensure = "Present"
           Name = "DSC-Service"
-        }
+        } #End WindowsFeature DSCServiceFeature
 
         xDscWebService PSDSCPullServer {
           Ensure = "Present"
@@ -32,7 +32,7 @@ Catch {
           State = "Started"
           DependsOn = "[WindowsFeature]DSCServiceFeature"
           UseSecurityBestPractices = $false
-        }
+        } # End xDscWebService PSDSCPullServer
 
         xDscWebService PSDSCReportServer {
           Ensure = "Present"
@@ -43,9 +43,9 @@ Catch {
           DependsOn = ("[WindowsFeature]DSCServiceFeature","[xDscWebService]PSDSCPullServer")
           CertificateThumbPrint = "AllowUnencryptedTraffic"
           UseSecurityBestPractices = $false
-        }  
-      }
-    } 
+        }  # End xDscWebService PSDSCReportServer
+      } # End node $ComputerName
+    } #End Configuration DSCPullServerConfig
     DSCPullServerConfig
     Start-DscConfiguration -Path .\DSCPullServerConfig -Force -Wait -Verbose
     
