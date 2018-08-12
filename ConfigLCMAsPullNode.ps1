@@ -5,6 +5,7 @@ configuration PullClientConfig {
     Settings {
       RefreshMode = 'Pull'
       ConfigurationID = '1d545e3b-60c3-47a0-bf65-5afc05182fd0'
+      ConfigurationMode = 'ApplyandAutoCorrect'
       RefreshFrequencyMins = 30 
       RebootNodeIfNeeded = $true
     }
