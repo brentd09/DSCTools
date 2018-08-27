@@ -14,5 +14,5 @@ configuration PullClientConfig {
     }      
   }
 }
-PullClientConfigID
+PullClientConfig
 Set-DscLocalConfigurationManager localhost -path .\PullClientConfig 
